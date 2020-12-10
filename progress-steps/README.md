@@ -156,7 +156,7 @@
     height: 4px;
     width: 50%;
     z-index: -1;
-    transition: 0.4s
+    transition: 0.4s ease;
 }
 
 .circle {
@@ -168,12 +168,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid var(--line-border-empty);;
-    transition: .4s, ease;
+    border: 3px solid var(--line-border-empty);
+    transition: 0.4s ease;
 }
 
 .circle.active {
-    border-color: var(--line-border-fill);;
+    border-color: var(--line-border-fill);
 }
 ```
 
@@ -387,3 +387,19 @@ progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%';
 * actives.length = 4
 * circles.length = 4
 * `progress.style.width = 3 / 3 * 100 + '%'` => 100%
+
+## Q3-1. transition, transform, translate는 각각 무엇인가?
+
+- transition: CSS property | CSS value를 즉시 적용하지 않고 애니메이션 효과를 주면서 적용한다.
+- transform: CSS property | element의 기울기, 좌표이동, 크기 변화, 회전 효과를 준다.
+- translate: CSS value | transform property에 속하는 value 중 하나이다. 좌표이동을 한다.
+
+## Q3-2. 버튼에서 transform은 어떻게 쓰이는가?
+
+버튼을 클릭했을 때 크기를 줄여서 클릭 효과를 준다.
+
+```css
+.btn:active {
+    transform: scale(0.98);
+}
+```
